@@ -4,12 +4,11 @@ class Building:
         self.buildingType = str(buildingType)
 
     def __eq__(self, other):
-        if  isinstance(other, int):
-            return self.numberOfFloors == other
-        else:
-            return self.buildingType == self.numberOfFloors
+        return self.numberOfFloors == other.numberOfFloors and self.buildingType == other.buildingType
 
-eq1 = Building(3,7)
-eq2 = Building(5,6)
-print(eq1.__eq__(3))
-print(eq2.__eq__(5))
+
+eq1 = Building(4, 4)
+eq2 = Building(7, 5)
+eq3 = Building(4, 4)
+print(eq1.__eq__(eq2))
+print(eq1.__eq__(eq3))
